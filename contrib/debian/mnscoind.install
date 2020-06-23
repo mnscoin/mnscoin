@@ -1,0 +1,2 @@
+usr/local/bin/mnscoind usr/bin
+usr/local/bin/mnscoin-cli usr/bin

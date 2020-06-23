@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=MNS
+Comment=MNS P2P Cryptocurrency
+Comment[fr]=MNS, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=MNS, eşten eşe kriptografik sanal para birimi
+Exec=mnscoin-qt %u
+Terminal=false
+Type=Application
+Icon=mnscoin128
+MimeType=x-scheme-handler/mnscoin;
+Categories=Office;Finance;
