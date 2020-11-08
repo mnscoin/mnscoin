@@ -53,7 +53,17 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x000001efabad6756e1937bc1c1b98bd066b29fb4e65e750d2ff3e2ca0f7d13d2"));
+    (100000, uint256("0x0ece1a14d37083dcf6a3643a0bae1f957f4f0ba6f3c95ed55087f02395293006"))
+    (120000, uint256("0xe84ba7ffae9c078bd416dfe218a57c66015e074c3f7fe689c859f5219c7da9e5"))
+    (130000, uint256("0xdcdbd206965ecadf31f7f51ea9f60212e4574bf859bd01e1a73dde187d2064d7"))
+    (140000, uint256("0x4243ebf5fe2bbe4bfcd8f535065a188e10b3b42e8c451900a32a7e184118744a"))
+    (150000, uint256("0x6da10834e11aae6166406afea0cdd80983c2e4e43dc902f41a9bd25e446d60f5"))
+    (160000, uint256("0x5adbb3a85b633a76a031cd00ab0dcac1a4aae1dd0b04893ce71f0e55c29fd4b3"))
+    (170000, uint256("0xf655cabce18e71df431e881f5001de698369d3d825557a67ccb27ad28490c6d8"))
+    (180000, uint256("0x599b5bc6d6f04eb5657cac7cd2d16ab8580bdad0318e0cb56c092598a50b3949"))
+    (190000, uint256("0x8a4502a9d01ea37b7811387432b802a60fe88537305474c3387f95dc968b5b00"))
+    (193000, uint256("0x062eaf93036a098844fea75abe0b24305014d9f80ba9a0ce97b593d8882d82f5"))
+    (193160, uint256("0x212d8b1f0593d19bdebd8ed05d1416bd8ea41da71b4276485a922dca66cacb7b"));
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -137,12 +147,14 @@ public:
 
         vFixedSeeds.clear();
 
-        vSeeds.push_back(CDNSSeedData("seed1", "144.172.91.162"));
-        vSeeds.push_back(CDNSSeedData("seed2", "144.172.91.17"));
-        vSeeds.push_back(CDNSSeedData("seed3", "144.172.91.18"));
-        vSeeds.push_back(CDNSSeedData("seed4", "144.172.91.180"));
-        vSeeds.push_back(CDNSSeedData("seed5", "144.172.91.192"));
-
+        vSeeds.push_back(CDNSSeedData("seed1", "mns-seed1.coindroid.org"));
+        vSeeds.push_back(CDNSSeedData("seed2", "mns-seed2.coindroid.org"));
+        vSeeds.push_back(CDNSSeedData("seed3", "mns-seed3.coindroid.org"));
+        vSeeds.push_back(CDNSSeedData("seed4", "mns-seed4.coindroid.org"));
+        vSeeds.push_back(CDNSSeedData("seed5", "mns-seed5.coindroid.org"));
+        vSeeds.push_back(CDNSSeedData("seed5", "mns-seed6.coindroid.org"));
+        vSeeds.push_back(CDNSSeedData("seed5", "mns-seed7.coindroid.org"));
+        
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 50);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 72);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 178);
@@ -214,14 +226,14 @@ public:
         vFixedSeeds.clear();
         vSeeds.clear();
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet mnscoin addresses start with 'x' or 'y'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet mnscoin script addresses start with '8' or '9'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet mns addresses start with 'x' or 'y'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet mns script addresses start with '8' or '9'
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 239);     // Testnet private keys start with '9' or 'c' (Bitcoin defaults)
-        // Testnet mnscoin BIP32 pubkeys start with 'DRKV'
+        // Testnet mns BIP32 pubkeys start with 'DRKV'
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x3a)(0x80)(0x61)(0xa0).convert_to_container<std::vector<unsigned char> >();
-        // Testnet mnscoin BIP32 prvkeys start with 'DRKP'
+        // Testnet mns BIP32 prvkeys start with 'DRKP'
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x3a)(0x80)(0x58)(0x37).convert_to_container<std::vector<unsigned char> >();
-        // Testnet mnscoin BIP44 coin type is '1' (All coin's testnet default)
+        // Testnet mns BIP44 coin type is '1' (All coin's testnet default)
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x01).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_test, ARRAYLEN(pnSeed6_test));
